@@ -11,8 +11,9 @@
 //   return (
 //     <div className="App">
 //       <ShowValue agera={count} />
-//      <Increment />
-//      <Decrement />
+//      <Increment>
+//  </Increment>
+//        <Decrement />
 
     
 //     </div>
@@ -21,10 +22,16 @@
 
 // export default App;
 
+//const Sho
 
 
 import React from 'react';
 import './App.css';
+import Posts from './components/Posts';
+import Images from './components/Images';
+import Form from './components/Form';
+import Comments from './components/Comments';
+import Todos from './components/Todos';
 
 // 1. Navigation Component
 const Navbar = () => (
@@ -75,13 +82,18 @@ const Services = () => {
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar /> */}
       <main>
-        <Hero />
-        <Services />
+        {/* <Hero /> */}
+        {/* <Services /> */}
+        {/* <Posts /> */}
+        <Images />
+        <Form />
+        <Comments/>
+        <Todos/>
       </main>
       <footer>
-        <p>© 2024 Taxplus Accountants | All Rights Reserved.</p>
+        <p>© {new Date().getFullYear()} Taxplus Accountants | All Rights Reserved.</p>
       </footer>
     </div>
   );
