@@ -37,7 +37,7 @@ let [rerun,setRerun] = useState(1)
     console.log("posts=====>",posts);
     return <div>
         {
-            posts.map(item=> <p>{item.id}</p>)
+            posts.map(item=> <p>Post id: {item.id}</p>)
         }
 
         <button onClick={()=> setRerun(++rerun)}>Run again</button>
