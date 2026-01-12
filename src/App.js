@@ -8,6 +8,9 @@ import Todos from './components/Todos';
 import Increment from "./components/Increment"
 import DashboardHome from "./components/Dashboard/DashboardHome"
 import DashboardSettings from "./components/Dashboard/DashboardSettings"
+import PostDetails from './components/PostDetails';
+import DashboardProfile from './components/Dashboard/DashboardProfile';
+import DashboardShow from './components/Dashboard/DashboardShow';
 // 4. Main App (The "Container" that holds everything)
 function App() {
   return (
@@ -15,14 +18,20 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path='/' element={<Posts />} />
+        
+        <Route path='/posts'>
+             <Route index element={<Posts />} />
+            <Route path=':postId' element={<PostDetails />} />
+        </Route>
+        
         <Route path='/todos' element={<Todos />} />
         <Route path='/increment' element={<Increment />} />
 
 
-        <Route path='dashboard'>
-          <Route index element={<DashboardHome />} />
+        <Route path='/dashboard' Component={DashboardHome} >
+          <Route index element={<DashboardShow />} />
           <Route path='settings' element={<DashboardSettings />}/>
+          <Route path='profile' element={<DashboardProfile />}/>
         </Route>
       </Routes>
     </div>
